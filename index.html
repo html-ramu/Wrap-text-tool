@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>wrap-text-tool</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="app-container">
+        
+        <header class="app-header">
+            <h1>wrap-text-tool</h1>
+        </header>
+
+        <div class="canvas-wrapper">
+            <canvas id="mainCanvas"></canvas>
+        </div>
+
+        <div class="controls-section">
+            
+            <div class="button-group shape-buttons">
+                <button id="btnCircleShape" class="control-btn" title="Circle">⭕</button>
+                <button id="btnSquareShape" class="control-btn" title="Rounded Square">🟦</button>
+                <button id="btnTriangleShape" class="control-btn" title="Rounded Triangle">🔺</button>
+                <button id="btnPolygonShape" class="control-btn" title="Polygon">🛑</button>
+                <button id="btnFlowerShape" class="control-btn active" title="Flower">🌸</button>
+            </div>
+
+            <div class="button-group action-buttons">
+                <button id="btnUploadImage" class="control-btn" title="Upload Image">📸</button>
+                <button id="btnCircleText" class="control-btn" title="Circle Text Mode">😀</button>
+            </div>
+
+            <input type="file" id="imageInput" accept="image/*" style="display: none;">
+            
+        </div>
+
+        <div class="wrap-mode-section">
+            <label class="wrap-label">Wrap Mode:</label>
+            <div class="wrap-buttons">
+                <button id="btnLeftWrap" class="wrap-btn active">Left Wrap</button>
+                <button id="btnRightWrap" class="wrap-btn">Right Wrap</button>
+            </div>
+        </div>
+
+        <div class="slider-section">
+            <label for="shapeSizeSlider">Shape Size:</label>
+            <input type="range" id="shapeSizeSlider" min="100" max="400" value="250" step="10">
+            <span id="shapeSizeValue">250</span>
+        </div>
+
+        <div class="slider-section" id="circleTextSizeSection" style="display: none;">
+            <label for="circleTextSizeSlider">Circle Text Size:</label>
+            <input type="range" id="circleTextSizeSlider" min="100" max="500" value="300" step="10">
+            <span id="circleTextSizeValue">300</span>
+        </div>
+
+        <div class="slider-section" id="imageZoomSection">
+            <label for="imageZoomSlider">Image Zoom:</label>
+            <input type="range" id="imageZoomSlider" min="50" max="300" value="100" step="5">
+            <span id="imageZoomValue">100%</span>
+        </div>
+
+        <div class="text-section">
+            <label for="textInput">Enter Text:</label>
+            <textarea id="textInput" rows="10" placeholder="Type your text here..."></textarea>
+        </div>
+
+        <div class="slider-section">
+            <label for="fontSizeSlider">Font Size:</label>
+            <input type="range" id="fontSizeSlider" min="12" max="60" value="24" step="2">
+            <span id="fontSizeValue">24px</span>
+        </div>
+
+        <div class="color-section">
+            <label for="textColorPicker">Text Color:</label>
+            <input type="color" id="textColorPicker" value="#000000">
+        </div>
+
+        <div class="color-section">
+            <label for="bgColorPicker">Canvas Background:</label>
+            <input type="color" id="bgColorPicker" value="#FFFFFF">
+        </div>
+
+        <div class="color-section">
+            <label for="shapeBgPicker">Shape/Circle Fill:</label>
+            <input type="color" id="shapeBgPicker" value="#FFFFFF">
+        </div>
+
+        <div class="color-section">
+            <label for="shapeBorderColorPicker">Border Color:</label>
+            <input type="color" id="shapeBorderColorPicker" value="#8B4513">
+        </div>
+
+        <div class="download-section">
+            <label>Download As:</label>
+            <div class="download-buttons">
+                <button id="btnDownloadAuto" class="download-btn">Auto</button>
+                <button id="btnDownloadPortrait" class="download-btn">Portrait</button>
+                <button id="btnDownloadLandscape" class="download-btn">Landscape</button>
+            </div>
+        </div>
+
+        <footer class="app-footer">
+            <p>© 2026 wrap-text-tool | Mobile Canvas Tool</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
